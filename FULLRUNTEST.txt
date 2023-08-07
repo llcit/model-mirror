@@ -1,0 +1,546 @@
+SYSTEM PROMPT: You are a language teacher tasked with developing 200 word passages for the purpose of language instruction. These passages will be used to test language learners with their corresponding literacy levels. 
+
+QUERY: write 3 200-word passages in english about this exerpt: 
+
+TEXT INPUT: QUERY: write 3 150-word passages in english about this exerpt: 2  
+heritage through different technologies has been developed. There is little doubt that digital technolo-
+gies have revolutionized scientific and public access to cultural heritage [1,2]. 
+Following the adoption of the UNESCO Convention for the Safeguarding of Intangible Heritage in 
+2003, the protection of cultural traditions has become prominent on an international level. One of the 
+key arguments in this area is that humanity's intangible heritage is threatened by processes of globaliza-
+tion. Modern technologies and mass culture are often regarded as a threat to the survival of traditional 
+expressions. According to the Convention, it falls upon national governments, cultural organizations 
+and practicing communities to transmit these vulnerable cultural expressions to the next generations. 
+Safeguarding activities vary according to local and national contexts. Interestingly, although modern 
+technologies are often identified as a threat to traditional expressions, it is these very technological in-
+novations that frequently play a key part in the preservation and dissemination of ICH. 
+Drawing on the existing literature and body of research, this chapter will provide an overview of 
+current safeguarding programmes with a particular focus on specific technological methods and how 
+they contribute to the documentation and transmission of intangible heritage. What we argue is that 
+new technologies can provide innovative approaches to the transmission and dissemination of intangi-
+ble heritage by supporting human interaction and communication.   
+More precisely, this chapter offers an overview of the literature, resources, projects and technologies 
+providing access to ICH. It aims to identify gaps and constraints of existing projects in the area. It cov-
+ers the state of the art in technologies that could be employed for access, capture and analysis of ICH in 
+order to highlight how specific new technologies can contribute to the transmission and safeguarding of 
+ICH.  
+Section 4.2 looks at previous work, including the broad scope of safeguarding activities supported 
+by UNESCO, which mainly consist of national and international inventories and rely mostly on archi-
+val approaches. Furthermore, projects run by museums, cultural organizations and grassroots initia-
+tives, which are driven by community participation, are examined. Section 4.3 takes a closer look at 
+specific technological methods (facial expression analysis and modelling, vocal tract sensing and mod-
+elling, body motion and gesture recognition, semantic multimedia analysis, 3D visualisation and text to 
+song) that relate to the documentation and transmission of ICH. Finally, Section 4.4 draws conclusions 
+and discusses future work. 
+4.2 Previous work 
+In the 2003 Convention for the Safeguarding of Intangible Heritage, UNESCO defines safeguarding 
+as ‘measures aimed at ensuring the viability of intangible heritage, including the identification, docu-
+                                                                                                                                                                      
+  
+3 
+mentation, research, preservation, protection, promotion, enhancement, transmission, particularly 
+through formal and informal education and revitalisation of the various aspects of such heritage. Al-
+though their role in safeguarding intangible heritage is not directly addressed in the Convention, new 
+technologies can play an important part in areas of identification, documentation, preservation, promo-
+tion and education. Audio-visual documentation, digital and multimedia resources from the areas of in-
+formation and communication technologies can provide useful tools for recording and collecting in-
+formation about expressions of intangible heritage.  
+ 
+ 
+Fig. 4.1: Overview of i-Treasures system (© 2015 EC FP7 i-Treasures project, Reprinted with Permission) 
+ 
+Taking forward this idea, i-Treasures project [87] attempts to explore the challenges and opportuni-
+ties that emerge when considering the safeguarding of intangible heritage from a technological perspec-
+tive. More specifically, its overall goal is to develop an open and extendable platform to provide access 
+to intangible cultural heritage resources for research and education. The core of the system lies in the 
+identification of specific features or patterns (e.g. postures, audio patterns, etc.) using multi-sensor 
+technology (e.g. cameras, microphones, EEG etc.) from different ICH forms. Subsequently, data fusion 
+analysis is applied to exploit information across different modalities, while context and content are in-
+tegrated for mapping the set of low or medium-level multimedia features to high-level concepts using 
+probabilistic inference, i.e. transforming the extracted data into a level of interpretation that is under-
+standable by humans. This information, coupled with other cultural resources, is accessible via the i-
+Treasures platform (an open-source CMS), in order to enable the widest possible participation of com-
+munities, groups and individuals in the safeguarding of ICH. The platform gives access to different 
+types of content (e.g. text, audio, images, video, 3D graphics) from different types of heritage or educa-
+tional institutions. Furthermore, using the latest advances in web-based game engines, a learning envi-
+ronment is developed to enhance training and evaluation of the learner’s performance by means of sen-
+sorimotor learning. Finally, a Text-to-Song system can also be used allowing the user to enter text 
+4  
+and/or notes and produce the equivalent singing voice. An overview of the system is presented in Fig. 
+4.1. 
+As shown in the cases discussed below, the first attempts at using documentation technologies for 
+safeguarding expressions of intangible heritage have had a primarily archival and encyclopaedic orien-
+tation.  
+Even before the adoption of the 2003 Convention, UNESCO supported projects aimed at the safe-
+guarding of intangible heritage. For example, the Red Book of Endangered Languages (subsequently 
+known as Atlas of Endangered Languages) is a publication and online resource that provides basic in-
+formation on more than two thousand languages. It has taken the form of an online map and archival 
+resource and provides an encyclopaedic list of world languages ranging from vulnerable to extinct. 
+However, the information available online is limited and there are limited learning possibilities avail-
+able.  
+Another example has been the Traditional Music of the World, a project that includes recordings of 
+traditional music [3]. The recordings have been made by ethnomusicologists in situ and then copied on 
+vinyl and CD format. Relevant photographs accompany the audio recordings. The project has made 
+available these recordings to an international audience and raising awareness about traditional music. 
+However, it seems to act primarily as an archival resource and has limited educational application. 
+Moreover, there is no online access to the recordings. 
+The 2003 Convention has put in place two lists that act as mechanisms for identifying intangible 
+heritage on a global level: The International List of the Intangible Cultural Heritage of Humanity and 
+the List of Intangible Cultural Heritage in Need of Urgent Safeguarding. These are international inven-
+tories of traditional expressions which are accessible online and include photographs and audio-visual 
+recordings of cultural expressions. Their primary function is that of an archival resource that raises 
+awareness about the listed expressions and their communities. The drawback of the lists is that they 
+seem to be serving primarily promotional objectives rather than activities that have a direct impact on 
+local communities [4]. Moreover, the amount of documentation available online is relatively limited. 
+Prior to these lists, UNESCO supported the programme for the Proclamation of Masterpieces of the 
+Oral and Intangible Heritage of Humanity [5,6]. This was the first international project to raise major 
+awareness at a governmental level and influence the adoption of the 2003 Convention. The database of 
+selected masterpieces of intangible heritage is available online and includes audio-visual and photo ma-
+terial, but has a relatively limited educational scope. 
+UNESCO has also supported national inventories of intangible heritage in several countries. Some 
+examples with information available on the Internet are the national inventories and/ or registers of Ja-
+pan, Brazil, Portugal, Bulgaria and Venezuela. Different methodologies have been used for the creation 
+of these inventories. In Bulgaria, catalogues were set up drawing on information collected through 
+questionnaires distributed to local communities via cultural centres. In Japan and Brazil, inventories 
+were drawn mostly though ethnographic research. The national inventories have raised awareness 
+5 
+about the importance of intangible heritage among local communities. However, the amount of docu-
+mentation available seems to be relatively limited. An innovative methodology has been used for the 
+documentation of intangible heritage in Scotland. The UK Commission of UNESCO in collaboration 
+with the Scottish Arts Council funds this project. It consists of an online archive of Scottish intangible 
+heritage that is open to the public in the form of a wiki. It contains photographic and audio-visual 
+documentation and uses participatory approaches. 
+In terms of the transmission and revitalisation of cultural expressions of intan-gible heritage, 
+UNESCO collaborates with relevant organisations for their promo-tion and enhancement. In this proc-
+ess, UNESCO has proposed a group of accred-ited NGOs and INGOs to provide advice and support in 
+the nomination of elements of intangible heritage for the International List. For the case of tradition-al 
+dance, The International Council for the Organisation of Folklore Festivals (http://www.cioff.org) and 
+the European Association of Folklore Festivals (http://www.eaff.eu/en) are relevant cases to consider. 
+Their work has allowed for a more direct contact between UNESCO and cultural practitioners and the 
+enhanced visibility of traditional expressions. 
+Further uses of new technologies in the safeguarding of intangible heritage have been made by local 
+community centres, museums and EU-funded research networks.  
+The EU has supported projects relating directly and indirectly to the transmission of intangible heri-
+tage. For example, the I-maestro project aims to build a multimedia environment for technology en-
+hanced music education. This employs self-learning environments, gestural interfaces and augmented 
+instruments promoting new methods for music training. The question that is raised, however, (and is 
+also relevant for i-Treasures) is whether technology risks replacing human interaction as a process of 
+transmission. 
+More directly related to intangible heritage and local development is the EU-funded project entitled 
+Cultural Capital Counts. The project aims to enable a positive development of six regions in Central 
+Europe by focusing on intangible heritage resources like living traditions, knowledge and talents. By 
+developing a strategy that is based on intangible cultural resources, the project aims to enable a sustain-
+able regional development in order to increase the region's attractiveness for enterprises. The project 
+appears to develop around a website that contains a list of various traditions and expressions of intan-
+gible heritage in the six regions. It proposes strategies for local, sustainable development and collabora-
+tive research. But the focus seems to be more on the commercialization of intangible heritage than on 
+how these practices and traditions can be transmitted to the next generations.   
+Europeana (http://www.europeana.eu/) is a well-known EU portal for exploring the digital resources 
+of Europe's museums, libraries, archives and audio-visual collections, thus offering direct access to 
+millions of books, manuscripts, paintings, films, museum objects and archival records that have been 
+digitised throughout Europe. Europeana's collection includes more than 53 million items and has re-
+leased all metadata under a CC0 waiver, making it freely available for re-use. However, until now, Eu-
+ropeana includes just a small number of 3-D tangible objects and no 3-D representations of ICH.  
+
+
+RESPONSE: Passage 1:
+
+Digital technologies have had a significant impact on the accessibility of cultural heritage. The adoption of the UNESCO Convention for the Safeguarding of Intangible Heritage in 2003 highlighted the need to protect cultural traditions in the face of globalization. Many believe that modern technologies and mass culture pose a threat to traditional expressions. However, it is interesting to note that these very technological innovations play a crucial role in preserving and disseminating intangible heritage.
+
+This chapter provides an overview of current safeguarding programs, with a focus on specific technological methods and their contribution to the documentation and transmission of intangible heritage. New technologies offer innovative approaches to the transmission and dissemination of intangible heritage by supporting human interaction and communication.
+
+The i-Treasures project explores the challenges and opportunities of safeguarding intangible heritage through technology. It aims to develop a platform that provides access to intangible cultural heritage resources for research and education. The platform utilizes multi-sensor technology to identify specific features or patterns in different forms of intangible heritage. The information is then accessible via an open-source CMS, allowing communities, groups, and individuals to participate in the safeguarding of intangible heritage.
+
+Passage 2:
+
+Previous work in safeguarding intangible heritage has primarily focused on archival and encyclopedic approaches. UNESCO has supported projects such as the Red Book of Endangered Languages and the Traditional Music of the World, which provide basic information and recordings of traditional expressions. However, these resources have limited educational application and online access.
+
+The 2003 Convention established two lists for identifying intangible heritage on a global level: The International List of the Intangible Cultural Heritage of Humanity and the List of Intangible Cultural Heritage in Need of Urgent Safeguarding. These lists serve as archival resources that raise awareness about cultural expressions and their communities. However, their impact on local communities is limited.
+
+UNESCO has also supported national inventories of intangible heritage in various countries. These inventories have raised awareness among local communities, but the amount of documentation available online is relatively limited. Scotland has implemented an innovative online archive of Scottish intangible heritage, using a wiki format and participatory approaches.
+
+Passage 3:
+
+New technologies have been utilized by local community centers, museums, and EU-funded research networks in the safeguarding of intangible heritage. The I-maestro project aims to enhance music education through multimedia environments, self-learning environments, and augmented instruments. However, there is a concern that technology may replace human interaction in the transmission process.
+
+The EU-funded project Cultural Capital Counts focuses on intangible heritage resources for sustainable regional development. The project aims to increase the attractiveness of regions for enterprises by leveraging intangible cultural resources. However, the focus seems to be more on commercialization rather than the transmission of practices and traditions to future generations.
+
+Europeana is a well-known EU portal that provides access to digital resources from Europe's museums, libraries, archives, and audio-visual collections. While it offers millions of digitized items, including books, manuscripts, paintings, and films, it currently lacks 3D representations of intangible cultural heritage.
+
+
+
+QUERY 2: You are a writer tasked with modifying a set of passages to a set of instructions. These are the instructions: Simplify the following passages to beginner level, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency.
+
+Final PasssagesPassage 1:
+
+New technology has made it easier for us to learn about and protect our cultural heritage. Some people worry that modern technology and popular culture might harm our traditional ways of doing things. But actually, technology helps us keep our traditions alive.
+
+This chapter talks about different ways we can use technology to protect and share our cultural heritage. New technology lets us share our traditions with others and learn from each other.
+
+The i-Treasures project is an example of using technology to protect our cultural heritage. It wants to create a platform where people can learn about and study our traditions. They use special technology to find important things in our traditions. Then, they put all the information on a website so that everyone can see it and help protect our cultural heritage.
+
+Passage 2:
+
+In the past, people focused on collecting and recording our cultural heritage. UNESCO supported projects that made books and recordings about our traditions. But these resources were not very useful for learning or finding information online.
+
+In 2003, UNESCO made two lists to show the world our cultural heritage. These lists help people learn about our traditions and the communities that practice them. But they don't do much to help local communities.
+
+UNESCO also helped countries make lists of their own cultural heritage. These lists helped people in those countries learn about their own traditions. But there isn't much information available online. Scotland made a special website where people can learn about Scottish traditions and even add their own information.
+
+Passage 3:
+
+Technology has been used by community centers, museums, and research networks to protect our cultural heritage. The I-maestro project wants to make learning music more fun by using technology. But some people worry that technology might replace human interaction.
+
+The Cultural Capital Counts project wants to use our cultural heritage to help communities grow. They want to make regions more attractive to businesses by using our traditions. But some people think they care more about making money than passing down our traditions.
+
+Europeana is a website that has lots of digital resources from Europe. It has books, paintings, and movies, but it doesn't have 3D representations of our cultural heritage yet.
+
+SYSTEM PROMPT: You are a language teacher tasked with developing 200 word passages for the purpose of language instruction. These passages will be used to test language learners with their corresponding literacy levels. 
+
+QUERY: write 3 200-word passages in english about this exerpt: 
+
+TEXT INPUT: QUERY: write 3 120-word passages in english about this exerpt: 2  
+heritage through different technologies has been developed. There is little doubt that digital technolo-
+gies have revolutionized scientific and public access to cultural heritage [1,2]. 
+Following the adoption of the UNESCO Convention for the Safeguarding of Intangible Heritage in 
+2003, the protection of cultural traditions has become prominent on an international level. One of the 
+key arguments in this area is that humanity's intangible heritage is threatened by processes of globaliza-
+tion. Modern technologies and mass culture are often regarded as a threat to the survival of traditional 
+expressions. According to the Convention, it falls upon national governments, cultural organizations 
+and practicing communities to transmit these vulnerable cultural expressions to the next generations. 
+Safeguarding activities vary according to local and national contexts. Interestingly, although modern 
+technologies are often identified as a threat to traditional expressions, it is these very technological in-
+novations that frequently play a key part in the preservation and dissemination of ICH. 
+Drawing on the existing literature and body of research, this chapter will provide an overview of 
+current safeguarding programmes with a particular focus on specific technological methods and how 
+they contribute to the documentation and transmission of intangible heritage. What we argue is that 
+new technologies can provide innovative approaches to the transmission and dissemination of intangi-
+ble heritage by supporting human interaction and communication.   
+More precisely, this chapter offers an overview of the literature, resources, projects and technologies 
+providing access to ICH. It aims to identify gaps and constraints of existing projects in the area. It cov-
+ers the state of the art in technologies that could be employed for access, capture and analysis of ICH in 
+order to highlight how specific new technologies can contribute to the transmission and safeguarding of 
+ICH.  
+Section 4.2 looks at previous work, including the broad scope of safeguarding activities supported 
+by UNESCO, which mainly consist of national and international inventories and rely mostly on archi-
+val approaches. Furthermore, projects run by museums, cultural organizations and grassroots initia-
+tives, which are driven by community participation, are examined. Section 4.3 takes a closer look at 
+specific technological methods (facial expression analysis and modelling, vocal tract sensing and mod-
+elling, body motion and gesture recognition, semantic multimedia analysis, 3D visualisation and text to 
+song) that relate to the documentation and transmission of ICH. Finally, Section 4.4 draws conclusions 
+and discusses future work. 
+4.2 Previous work 
+In the 2003 Convention for the Safeguarding of Intangible Heritage, UNESCO defines safeguarding 
+as ‘measures aimed at ensuring the viability of intangible heritage, including the identification, docu-
+                                                                                                                                                                      
+  
+3 
+mentation, research, preservation, protection, promotion, enhancement, transmission, particularly 
+through formal and informal education and revitalisation of the various aspects of such heritage. Al-
+though their role in safeguarding intangible heritage is not directly addressed in the Convention, new 
+technologies can play an important part in areas of identification, documentation, preservation, promo-
+tion and education. Audio-visual documentation, digital and multimedia resources from the areas of in-
+formation and communication technologies can provide useful tools for recording and collecting in-
+formation about expressions of intangible heritage.  
+ 
+ 
+Fig. 4.1: Overview of i-Treasures system (© 2015 EC FP7 i-Treasures project, Reprinted with Permission) 
+ 
+Taking forward this idea, i-Treasures project [87] attempts to explore the challenges and opportuni-
+ties that emerge when considering the safeguarding of intangible heritage from a technological perspec-
+tive. More specifically, its overall goal is to develop an open and extendable platform to provide access 
+to intangible cultural heritage resources for research and education. The core of the system lies in the 
+identification of specific features or patterns (e.g. postures, audio patterns, etc.) using multi-sensor 
+technology (e.g. cameras, microphones, EEG etc.) from different ICH forms. Subsequently, data fusion 
+analysis is applied to exploit information across different modalities, while context and content are in-
+tegrated for mapping the set of low or medium-level multimedia features to high-level concepts using 
+probabilistic inference, i.e. transforming the extracted data into a level of interpretation that is under-
+standable by humans. This information, coupled with other cultural resources, is accessible via the i-
+Treasures platform (an open-source CMS), in order to enable the widest possible participation of com-
+munities, groups and individuals in the safeguarding of ICH. The platform gives access to different 
+types of content (e.g. text, audio, images, video, 3D graphics) from different types of heritage or educa-
+tional institutions. Furthermore, using the latest advances in web-based game engines, a learning envi-
+ronment is developed to enhance training and evaluation of the learner’s performance by means of sen-
+sorimotor learning. Finally, a Text-to-Song system can also be used allowing the user to enter text 
+4  
+and/or notes and produce the equivalent singing voice. An overview of the system is presented in Fig. 
+4.1. 
+As shown in the cases discussed below, the first attempts at using documentation technologies for 
+safeguarding expressions of intangible heritage have had a primarily archival and encyclopaedic orien-
+tation.  
+Even before the adoption of the 2003 Convention, UNESCO supported projects aimed at the safe-
+guarding of intangible heritage. For example, the Red Book of Endangered Languages (subsequently 
+known as Atlas of Endangered Languages) is a publication and online resource that provides basic in-
+formation on more than two thousand languages. It has taken the form of an online map and archival 
+resource and provides an encyclopaedic list of world languages ranging from vulnerable to extinct. 
+However, the information available online is limited and there are limited learning possibilities avail-
+able.  
+Another example has been the Traditional Music of the World, a project that includes recordings of 
+traditional music [3]. The recordings have been made by ethnomusicologists in situ and then copied on 
+vinyl and CD format. Relevant photographs accompany the audio recordings. The project has made 
+available these recordings to an international audience and raising awareness about traditional music. 
+However, it seems to act primarily as an archival resource and has limited educational application. 
+Moreover, there is no online access to the recordings. 
+The 2003 Convention has put in place two lists that act as mechanisms for identifying intangible 
+heritage on a global level: The International List of the Intangible Cultural Heritage of Humanity and 
+the List of Intangible Cultural Heritage in Need of Urgent Safeguarding. These are international inven-
+tories of traditional expressions which are accessible online and include photographs and audio-visual 
+recordings of cultural expressions. Their primary function is that of an archival resource that raises 
+awareness about the listed expressions and their communities. The drawback of the lists is that they 
+seem to be serving primarily promotional objectives rather than activities that have a direct impact on 
+local communities [4]. Moreover, the amount of documentation available online is relatively limited. 
+Prior to these lists, UNESCO supported the programme for the Proclamation of Masterpieces of the 
+Oral and Intangible Heritage of Humanity [5,6]. This was the first international project to raise major 
+awareness at a governmental level and influence the adoption of the 2003 Convention. The database of 
+selected masterpieces of intangible heritage is available online and includes audio-visual and photo ma-
+terial, but has a relatively limited educational scope. 
+UNESCO has also supported national inventories of intangible heritage in several countries. Some 
+examples with information available on the Internet are the national inventories and/ or registers of Ja-
+pan, Brazil, Portugal, Bulgaria and Venezuela. Different methodologies have been used for the creation 
+of these inventories. In Bulgaria, catalogues were set up drawing on information collected through 
+questionnaires distributed to local communities via cultural centres. In Japan and Brazil, inventories 
+were drawn mostly though ethnographic research. The national inventories have raised awareness 
+5 
+about the importance of intangible heritage among local communities. However, the amount of docu-
+mentation available seems to be relatively limited. An innovative methodology has been used for the 
+documentation of intangible heritage in Scotland. The UK Commission of UNESCO in collaboration 
+with the Scottish Arts Council funds this project. It consists of an online archive of Scottish intangible 
+heritage that is open to the public in the form of a wiki. It contains photographic and audio-visual 
+documentation and uses participatory approaches. 
+In terms of the transmission and revitalisation of cultural expressions of intan-gible heritage, 
+UNESCO collaborates with relevant organisations for their promo-tion and enhancement. In this proc-
+ess, UNESCO has proposed a group of accred-ited NGOs and INGOs to provide advice and support in 
+the nomination of elements of intangible heritage for the International List. For the case of tradition-al 
+dance, The International Council for the Organisation of Folklore Festivals (http://www.cioff.org) and 
+the European Association of Folklore Festivals (http://www.eaff.eu/en) are relevant cases to consider. 
+Their work has allowed for a more direct contact between UNESCO and cultural practitioners and the 
+enhanced visibility of traditional expressions. 
+Further uses of new technologies in the safeguarding of intangible heritage have been made by local 
+community centres, museums and EU-funded research networks.  
+The EU has supported projects relating directly and indirectly to the transmission of intangible heri-
+tage. For example, the I-maestro project aims to build a multimedia environment for technology en-
+hanced music education. This employs self-learning environments, gestural interfaces and augmented 
+instruments promoting new methods for music training. The question that is raised, however, (and is 
+also relevant for i-Treasures) is whether technology risks replacing human interaction as a process of 
+transmission. 
+More directly related to intangible heritage and local development is the EU-funded project entitled 
+Cultural Capital Counts. The project aims to enable a positive development of six regions in Central 
+Europe by focusing on intangible heritage resources like living traditions, knowledge and talents. By 
+developing a strategy that is based on intangible cultural resources, the project aims to enable a sustain-
+able regional development in order to increase the region's attractiveness for enterprises. The project 
+appears to develop around a website that contains a list of various traditions and expressions of intan-
+gible heritage in the six regions. It proposes strategies for local, sustainable development and collabora-
+tive research. But the focus seems to be more on the commercialization of intangible heritage than on 
+how these practices and traditions can be transmitted to the next generations.   
+Europeana (http://www.europeana.eu/) is a well-known EU portal for exploring the digital resources 
+of Europe's museums, libraries, archives and audio-visual collections, thus offering direct access to 
+millions of books, manuscripts, paintings, films, museum objects and archival records that have been 
+digitised throughout Europe. Europeana's collection includes more than 53 million items and has re-
+leased all metadata under a CC0 waiver, making it freely available for re-use. However, until now, Eu-
+ropeana includes just a small number of 3-D tangible objects and no 3-D representations of ICH.  
+
+
+RESPONSE: Passage 1 (120 words):
+
+Digital technologies have had a significant impact on the accessibility and preservation of cultural heritage. The adoption of the UNESCO Convention for the Safeguarding of Intangible Heritage in 2003 highlighted the importance of protecting traditional expressions in the face of globalization. While modern technologies are often seen as a threat to traditional practices, they also play a crucial role in preserving and transmitting intangible heritage. This chapter provides an overview of current safeguarding programs, focusing on specific technological methods that contribute to the documentation and transmission of cultural heritage. New technologies offer innovative approaches to the dissemination of intangible heritage by supporting human interaction and communication. By utilizing digital and multimedia resources, information about cultural expressions can be recorded and collected, ensuring their preservation for future generations.
+
+Passage 2 (120 words):
+
+The i-Treasures project aims to explore the challenges and opportunities of safeguarding intangible heritage through technology. This project seeks to develop an open and extendable platform that provides access to intangible cultural heritage resources for research and education. By using multi-sensor technology, specific features and patterns of intangible heritage forms are identified. Data fusion analysis is then applied to integrate information across different modalities, allowing for a deeper understanding of the heritage. The i-Treasures platform, an open-source CMS, provides access to various types of content from different heritage and educational institutions. Additionally, a learning environment is developed to enhance training and evaluation through sensorimotor learning. This project demonstrates how new technologies can contribute to the safeguarding and transmission of intangible heritage, ensuring its accessibility for communities, groups, and individuals.
+
+Passage 3 (120 words):
+
+Various initiatives and projects have been supported by UNESCO and the European Union to safeguard intangible heritage. The Red Book of Endangered Languages and the Traditional Music of the World project are examples of efforts to raise awareness and provide access to cultural expressions. UNESCO has also established international inventories of intangible cultural heritage, which include photographs and audio-visual recordings. However, these inventories primarily serve promotional objectives and have limited educational applications. The EU-funded projects, such as I-maestro and Cultural Capital Counts, explore the use of technology in music education and regional development. While these projects offer innovative approaches, there is a concern that technology may replace human interaction in the transmission of intangible heritage. Europeana, a well-known EU portal, provides access to millions of digitized resources but currently lacks 3-D representations of intangible cultural heritage.
+
+QUERY 2: You are a writer tasked with modifying a set of passages to a set of instructions. These are the instructions: Simplify the following passages to beginner level, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Separate these passages with #### as a delimiter
+
+Final PasssagesPassage 1 (beginner level):
+
+Digital technologies have changed how we can access and keep cultural heritage. In 2003, a special agreement was made to protect traditional ways in a global world. Some people think modern technologies are bad for traditions, but they can also help keep them alive. This chapter talks about programs that protect and share cultural heritage. New technologies let us share and save cultural expressions using digital and multimedia resources. This helps make sure future generations can learn about them.
+
+####
+
+Passage 2 (beginner level):
+
+The i-Treasures project wants to use technology to protect cultural heritage. They want to make a platform that lets people learn and study intangible cultural heritage. They use special technology to find out more about different forms of heritage. They put all the information together to understand it better. The i-Treasures platform is a special computer program that lets people see different types of content from different places. They also made a learning program to help people learn and practice. This project shows how technology can help protect and share cultural heritage so that everyone can learn about it.
+
+####
+
+Passage 3 (beginner level):
+
+UNESCO and the European Union have supported many projects to protect cultural heritage. They made the Red Book of Endangered Languages and the Traditional Music of the World project to help people know about cultural expressions. UNESCO also made lists of cultural heritage with pictures and videos. But these lists are mostly for showing off and not for learning. The EU-funded projects, like I-maestro and Cultural Capital Counts, use technology to teach music and help communities grow. Some people worry that technology might replace people in teaching cultural heritage. Europeana is a famous website that has lots of digital things, but it doesn't have 3-D things yet.
+
+SYSTEM PROMPT: You are a language teacher tasked with developing 200 word passages for the purpose of language instruction. These passages will be used to test language learners with their corresponding literacy levels. 
+
+QUERY: write 3 200-word passages in english about this exerpt: 
+
+TEXT INPUT: QUERY: write 3 120-word passages in english about this exerpt: 2  
+heritage through different technologies has been developed. There is little doubt that digital technolo-
+gies have revolutionized scientific and public access to cultural heritage [1,2]. 
+Following the adoption of the UNESCO Convention for the Safeguarding of Intangible Heritage in 
+2003, the protection of cultural traditions has become prominent on an international level. One of the 
+key arguments in this area is that humanity's intangible heritage is threatened by processes of globaliza-
+tion. Modern technologies and mass culture are often regarded as a threat to the survival of traditional 
+expressions. According to the Convention, it falls upon national governments, cultural organizations 
+and practicing communities to transmit these vulnerable cultural expressions to the next generations. 
+Safeguarding activities vary according to local and national contexts. Interestingly, although modern 
+technologies are often identified as a threat to traditional expressions, it is these very technological in-
+novations that frequently play a key part in the preservation and dissemination of ICH. 
+Drawing on the existing literature and body of research, this chapter will provide an overview of 
+current safeguarding programmes with a particular focus on specific technological methods and how 
+they contribute to the documentation and transmission of intangible heritage. What we argue is that 
+new technologies can provide innovative approaches to the transmission and dissemination of intangi-
+ble heritage by supporting human interaction and communication.   
+More precisely, this chapter offers an overview of the literature, resources, projects and technologies 
+providing access to ICH. It aims to identify gaps and constraints of existing projects in the area. It cov-
+ers the state of the art in technologies that could be employed for access, capture and analysis of ICH in 
+order to highlight how specific new technologies can contribute to the transmission and safeguarding of 
+ICH.  
+Section 4.2 looks at previous work, including the broad scope of safeguarding activities supported 
+by UNESCO, which mainly consist of national and international inventories and rely mostly on archi-
+val approaches. Furthermore, projects run by museums, cultural organizations and grassroots initia-
+tives, which are driven by community participation, are examined. Section 4.3 takes a closer look at 
+specific technological methods (facial expression analysis and modelling, vocal tract sensing and mod-
+elling, body motion and gesture recognition, semantic multimedia analysis, 3D visualisation and text to 
+song) that relate to the documentation and transmission of ICH. Finally, Section 4.4 draws conclusions 
+and discusses future work. 
+4.2 Previous work 
+In the 2003 Convention for the Safeguarding of Intangible Heritage, UNESCO defines safeguarding 
+as ‘measures aimed at ensuring the viability of intangible heritage, including the identification, docu-
+                                                                                                                                                                      
+  
+3 
+mentation, research, preservation, protection, promotion, enhancement, transmission, particularly 
+through formal and informal education and revitalisation of the various aspects of such heritage. Al-
+though their role in safeguarding intangible heritage is not directly addressed in the Convention, new 
+technologies can play an important part in areas of identification, documentation, preservation, promo-
+tion and education. Audio-visual documentation, digital and multimedia resources from the areas of in-
+formation and communication technologies can provide useful tools for recording and collecting in-
+formation about expressions of intangible heritage.  
+ 
+ 
+Fig. 4.1: Overview of i-Treasures system (© 2015 EC FP7 i-Treasures project, Reprinted with Permission) 
+ 
+Taking forward this idea, i-Treasures project [87] attempts to explore the challenges and opportuni-
+ties that emerge when considering the safeguarding of intangible heritage from a technological perspec-
+tive. More specifically, its overall goal is to develop an open and extendable platform to provide access 
+to intangible cultural heritage resources for research and education. The core of the system lies in the 
+identification of specific features or patterns (e.g. postures, audio patterns, etc.) using multi-sensor 
+technology (e.g. cameras, microphones, EEG etc.) from different ICH forms. Subsequently, data fusion 
+analysis is applied to exploit information across different modalities, while context and content are in-
+tegrated for mapping the set of low or medium-level multimedia features to high-level concepts using 
+probabilistic inference, i.e. transforming the extracted data into a level of interpretation that is under-
+standable by humans. This information, coupled with other cultural resources, is accessible via the i-
+Treasures platform (an open-source CMS), in order to enable the widest possible participation of com-
+munities, groups and individuals in the safeguarding of ICH. The platform gives access to different 
+types of content (e.g. text, audio, images, video, 3D graphics) from different types of heritage or educa-
+tional institutions. Furthermore, using the latest advances in web-based game engines, a learning envi-
+ronment is developed to enhance training and evaluation of the learner’s performance by means of sen-
+sorimotor learning. Finally, a Text-to-Song system can also be used allowing the user to enter text 
+4  
+and/or notes and produce the equivalent singing voice. An overview of the system is presented in Fig. 
+4.1. 
+As shown in the cases discussed below, the first attempts at using documentation technologies for 
+safeguarding expressions of intangible heritage have had a primarily archival and encyclopaedic orien-
+tation.  
+Even before the adoption of the 2003 Convention, UNESCO supported projects aimed at the safe-
+guarding of intangible heritage. For example, the Red Book of Endangered Languages (subsequently 
+known as Atlas of Endangered Languages) is a publication and online resource that provides basic in-
+formation on more than two thousand languages. It has taken the form of an online map and archival 
+resource and provides an encyclopaedic list of world languages ranging from vulnerable to extinct. 
+However, the information available online is limited and there are limited learning possibilities avail-
+able.  
+Another example has been the Traditional Music of the World, a project that includes recordings of 
+traditional music [3]. The recordings have been made by ethnomusicologists in situ and then copied on 
+vinyl and CD format. Relevant photographs accompany the audio recordings. The project has made 
+available these recordings to an international audience and raising awareness about traditional music. 
+However, it seems to act primarily as an archival resource and has limited educational application. 
+Moreover, there is no online access to the recordings. 
+The 2003 Convention has put in place two lists that act as mechanisms for identifying intangible 
+heritage on a global level: The International List of the Intangible Cultural Heritage of Humanity and 
+the List of Intangible Cultural Heritage in Need of Urgent Safeguarding. These are international inven-
+tories of traditional expressions which are accessible online and include photographs and audio-visual 
+recordings of cultural expressions. Their primary function is that of an archival resource that raises 
+awareness about the listed expressions and their communities. The drawback of the lists is that they 
+seem to be serving primarily promotional objectives rather than activities that have a direct impact on 
+local communities [4]. Moreover, the amount of documentation available online is relatively limited. 
+Prior to these lists, UNESCO supported the programme for the Proclamation of Masterpieces of the 
+Oral and Intangible Heritage of Humanity [5,6]. This was the first international project to raise major 
+awareness at a governmental level and influence the adoption of the 2003 Convention. The database of 
+selected masterpieces of intangible heritage is available online and includes audio-visual and photo ma-
+terial, but has a relatively limited educational scope. 
+UNESCO has also supported national inventories of intangible heritage in several countries. Some 
+examples with information available on the Internet are the national inventories and/ or registers of Ja-
+pan, Brazil, Portugal, Bulgaria and Venezuela. Different methodologies have been used for the creation 
+of these inventories. In Bulgaria, catalogues were set up drawing on information collected through 
+questionnaires distributed to local communities via cultural centres. In Japan and Brazil, inventories 
+were drawn mostly though ethnographic research. The national inventories have raised awareness 
+5 
+about the importance of intangible heritage among local communities. However, the amount of docu-
+mentation available seems to be relatively limited. An innovative methodology has been used for the 
+documentation of intangible heritage in Scotland. The UK Commission of UNESCO in collaboration 
+with the Scottish Arts Council funds this project. It consists of an online archive of Scottish intangible 
+heritage that is open to the public in the form of a wiki. It contains photographic and audio-visual 
+documentation and uses participatory approaches. 
+In terms of the transmission and revitalisation of cultural expressions of intan-gible heritage, 
+UNESCO collaborates with relevant organisations for their promo-tion and enhancement. In this proc-
+ess, UNESCO has proposed a group of accred-ited NGOs and INGOs to provide advice and support in 
+the nomination of elements of intangible heritage for the International List. For the case of tradition-al 
+dance, The International Council for the Organisation of Folklore Festivals (http://www.cioff.org) and 
+the European Association of Folklore Festivals (http://www.eaff.eu/en) are relevant cases to consider. 
+Their work has allowed for a more direct contact between UNESCO and cultural practitioners and the 
+enhanced visibility of traditional expressions. 
+Further uses of new technologies in the safeguarding of intangible heritage have been made by local 
+community centres, museums and EU-funded research networks.  
+The EU has supported projects relating directly and indirectly to the transmission of intangible heri-
+tage. For example, the I-maestro project aims to build a multimedia environment for technology en-
+hanced music education. This employs self-learning environments, gestural interfaces and augmented 
+instruments promoting new methods for music training. The question that is raised, however, (and is 
+also relevant for i-Treasures) is whether technology risks replacing human interaction as a process of 
+transmission. 
+More directly related to intangible heritage and local development is the EU-funded project entitled 
+Cultural Capital Counts. The project aims to enable a positive development of six regions in Central 
+Europe by focusing on intangible heritage resources like living traditions, knowledge and talents. By 
+developing a strategy that is based on intangible cultural resources, the project aims to enable a sustain-
+able regional development in order to increase the region's attractiveness for enterprises. The project 
+appears to develop around a website that contains a list of various traditions and expressions of intan-
+gible heritage in the six regions. It proposes strategies for local, sustainable development and collabora-
+tive research. But the focus seems to be more on the commercialization of intangible heritage than on 
+how these practices and traditions can be transmitted to the next generations.   
+Europeana (http://www.europeana.eu/) is a well-known EU portal for exploring the digital resources 
+of Europe's museums, libraries, archives and audio-visual collections, thus offering direct access to 
+millions of books, manuscripts, paintings, films, museum objects and archival records that have been 
+digitised throughout Europe. Europeana's collection includes more than 53 million items and has re-
+leased all metadata under a CC0 waiver, making it freely available for re-use. However, until now, Eu-
+ropeana includes just a small number of 3-D tangible objects and no 3-D representations of ICH.  
+
+
+RESPONSE: Passage 1 (120 words):
+
+Digital technologies have had a significant impact on the accessibility and preservation of cultural heritage. The adoption of the UNESCO Convention for the Safeguarding of Intangible Heritage in 2003 highlighted the importance of protecting traditional expressions in the face of globalization. While modern technologies are often seen as a threat to traditional practices, they also play a crucial role in preserving and transmitting intangible heritage. This chapter provides an overview of current safeguarding programs, focusing on specific technological methods that contribute to the documentation and transmission of cultural heritage. New technologies offer innovative approaches to the dissemination of intangible heritage by supporting human interaction and communication. By utilizing digital and multimedia resources, information about cultural expressions can be recorded and collected, ensuring their preservation for future generations.
+
+Passage 2 (120 words):
+
+The i-Treasures project aims to explore the challenges and opportunities of safeguarding intangible heritage through technology. This project seeks to develop an open and extendable platform that provides access to intangible cultural heritage resources for research and education. By using multi-sensor technology, specific features and patterns of intangible heritage forms are identified. Data fusion analysis is then applied to integrate information across different modalities, allowing for a deeper understanding of the heritage. The i-Treasures platform, an open-source CMS, provides access to various types of content from different heritage and educational institutions. Additionally, a learning environment is developed to enhance training and evaluation through sensorimotor learning. This project demonstrates how new technologies can contribute to the safeguarding and transmission of intangible heritage, ensuring its accessibility for communities, groups, and individuals.
+
+Passage 3 (120 words):
+
+Various initiatives and projects have been supported by UNESCO and the European Union to safeguard intangible heritage. The Red Book of Endangered Languages and the Traditional Music of the World project are examples of efforts to raise awareness and provide access to cultural expressions. UNESCO has also established international inventories of intangible cultural heritage, which include photographs and audio-visual recordings. However, these inventories primarily serve promotional objectives and have limited educational applications. The EU-funded projects, such as I-maestro and Cultural Capital Counts, explore the use of technology in music education and regional development. While these projects offer innovative approaches, there is a concern that technology may replace human interaction in the transmission of intangible heritage. Europeana, a well-known EU portal, provides access to millions of digitized resources but currently lacks 3-D representations of intangible cultural heritage.
+
+QUERY 2: You are a writer tasked with modifying a set of passages to a set of instructions. These are the instructions: Simplify the following passages to beginner level, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Separate these passages with #### as a delimiter
+
+Final PasssagesPassage 1 (beginner level):
+
+Digital technologies have changed how we can access and keep cultural heritage. In 2003, a special agreement was made to protect traditional ways in a global world. Some people think modern technologies are bad for traditions, but they can also help keep them alive. This chapter talks about programs that protect and share cultural heritage. New technologies can help us share and save cultural expressions. We can use digital and multimedia resources to record and collect information about cultures. This way, we can make sure future generations can learn about them.
+
+####
+
+Passage 2 (beginner level):
+
+The i-Treasures project wants to use technology to protect cultural heritage. They want to make a platform that people can use to learn about intangible cultural heritage. They use special technology to find out more about different cultural forms. They put all the information together to understand the heritage better. The i-Treasures platform is a special computer program that lets people see different types of content from different places. They also made a learning program to help people learn and practice. This project shows how technology can help protect and share cultural heritage, so everyone can learn about it.
+
+####
+
+Passage 3 (beginner level):
+
+UNESCO and the European Union have helped many projects to protect cultural heritage. They made a book about languages that are in danger and a project about traditional music. They also made lists of cultural heritage with pictures and videos. But these lists are mostly for showing off and not for learning. The EU-funded projects, like I-maestro and Cultural Capital Counts, use technology to teach music and help communities. Some people worry that technology will replace people in teaching cultural heritage. Europeana is a famous website that has lots of digital things, but it doesn't have 3-D things yet.
