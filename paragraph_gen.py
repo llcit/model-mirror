@@ -28,7 +28,7 @@ print("PASSAGES: " + passages)
 
 #diff definitions of difficulty
 intro = 'You are a writer tasked with modifying a set of passages to a set of instructions. These are the instructions: '
-beginnerInstruction = 'Modify the following passages to beginner level korean, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. If it is not in korean, translate it. Always put #### before every passage generated.  Do not number or label the passages.'
+beginnerInstruction = 'Modify the following passages to beginner level korean, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. If it is not in korean, translate it. Always put #### before every passage generated. Do not number or label the passages.'
 intermediateInstruction = 'Modify the following passages to intermediate level korean, which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences. Always put #### before every passage generated. Do not number or label the passages.'
 advancedInstruction = 'Modify the following passages to advanced level, which means that the language used has complex grammar, contains infrequent vocabulary words and jargon, and has lengthy sentences. Always separate every passage that is generated with #### as a delimiter Do not number or label the passages.'
 
