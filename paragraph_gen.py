@@ -5,12 +5,13 @@ import os
 APIKEY = os.environ['OPENAI_API_KEY']
 openai.api_key = APIKEY
 
-initInstruction = 'You are a writer tasked with creating 5 120-word passages based on a paragraph of source material. You may draw from other sources in this writing.'
-
 with open('paragraphmaterial.txt', 'r') as f:
     cinput = f.read()
 
-cinput = 'QUERY: Write 5 unique 120-word passages based loosely on this paragraph: ' + cinput
+language = 'korean'
+numPassages = 3
+text = 'QUERY: write 5 extremely unique 110-word passages with differing word choice in' + language + ' about this exerpt: ' + cinput + '. Every passage must be in korean.'
+initInstruction = 'You are a creative language teacher tasked with developing unique 110 word passages in korean for the purpose of language instruction. These passages will be used to test language learners with their corresponding literacy levels.'
 
 def returnPrompts(sysinput, cinput):
     response = openai.ChatCompletion.create(
@@ -18,16 +19,88 @@ def returnPrompts(sysinput, cinput):
         messages=[
         {"role": "system", "content": sysinput},
         {"role": "user", "content": cinput}],
-        max_tokens=1000,
-        temperature=0.9,
-        presence_penalty = 0.8
+        temperature=0,
+        presence_penalty = 0
     )
-    reply = response['choices'][0]['message']['content']
-    return reply
+    passages = response['choices'][0]['message']['content']
+    return passages
 
 passages = returnPrompts(initInstruction, cinput)
 
-with open('paragenresponse.txt', 'a') as f:
-    f.write('\n\nSYSTEM PROMPT: ' + initInstruction + '\n\n')
-    f.write(cinput + '\n\n')
-    f.write('TEXT INPUT: ' + passages + '\n\n')
+#diff definitions of difficulty
+intro = 'You are a writer tasked with modifying a set of passages to a set of instructions. These are the instructions: '
+beginnerInstruction = 'Modify the following passages to beginner level korean, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. If it is not in korean, translate it. Always put #### before every passage generated.  Do not number or label the passages.'
+intermediateInstruction = 'Modify the following passages to intermediate level, which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences. Always separate every passage that is generated with #### as a delimiter. Do not number or label the passages.'
+advancedInstruction = 'Modify the following passages to advanced level, which means that the language used has complex grammar, contains infrequent vocabulary words and jargon, and has lengthy sentences. Always separate every passage that is generated with #### as a delimiter Do not number or label the passages.'
+
+difficulty = int(input("difficulty level, 1 for beginner, 2 for intermediate, 3 for advanced: "))
+print('Input Received: ' + str(difficulty))
+if difficulty == 1:
+    userInput = intro + beginnerInstruction
+    importfile = 'krbegdata.json'
+elif difficulty == 2:
+    userInput = intro + intermediateInstruction
+    importfile = 'krinterdata.json'
+else:
+    userInput = intro + advancedInstruction
+    importfile = 'kradvdata.json'
+
+#simplification
+def simplifyReplies(sysinput, cinput):
+    response = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo',
+        messages=[
+        {"role": "system", "content": sysinput},
+        {"role": "user", "content": cinput}],
+        temperature=0,
+    )
+    passage = response['choices'][0]['message']['content']
+    return passage
+
+finalPassages = simplifyReplies(userInput, passages)
+
+#split into array indices
+arr = finalPassages.split("####")
+
+for i in range(len(arr)):
+    print(finalPassages)
+
+
+def classifyPassages(cinput):
+    response = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo',
+        messages=[
+        {"role": "user", "content": cinput}],
+        max_tokens=100,
+        temperature=0,
+    )
+    passage = response['choices'][0]['message']['content']
+    return passage
+
+
+with open(importfile, "r") as rf:
+    dict = json.load(rf)
+
+for i in range(len(arr)):
+    #if len(arr[i]) <= 200 and arr[i] == arr[-1]:
+    #    break
+    #elif len(arr[i]) <= 200:
+    #    arr[i] = arr[i+1]
+    pintro = 'QUERY: Classify this passage in english as one of the following - Culture, Astronomy, School, Food, Sports, or Other. Give a one word response. Pick ONLY from these categories.' + arr[i]
+    classification = classifyPassages(pintro)
+    print(classification)
+    if 'Culture' in classification:
+        dict["Culture"].append(arr[i])
+    elif 'Astronomy' in classification:
+        dict["Astronomy"].append(arr[i])
+    elif 'School' in classification:
+        dict["School"].append(arr[i])
+    elif 'Food' in classification:
+        dict["Food"].append(arr[i])
+    elif 'Sports' in classification:
+        dict["Sports"].append(arr[i])
+    else:
+        dict["Other"].append(arr[i])
+
+with open(importfile, "w") as wf:
+    json.dump(dict, wf)
