@@ -1,6 +1,6 @@
 import openai
+import json
 import os
-
 
 APIKEY = os.environ['OPENAI_API_KEY']
 openai.api_key = APIKEY
@@ -9,9 +9,8 @@ with open('paragraphmaterial.txt', 'r') as f:
     cinput = f.read()
 
 language = 'korean'
-numPassages = 3
-text = 'QUERY: write 5 extremely unique 110-word passages with differing word choice in' + language + ' about this exerpt: ' + cinput + '. Every passage must be in korean.'
-initInstruction = 'You are a creative language teacher tasked with developing unique 110 word passages in korean for the purpose of language instruction. These passages will be used to test language learners with their corresponding literacy levels.'
+text = 'QUERY: generate 5 new, extremely unique 110-word passages with differing word choice in' + language + ' about this exerpt: ' + cinput + '. Every passage must be in korean.'
+initInstruction = 'You are a creative language teacher tasked with developing 5 unique 110 word passages in korean for the purpose of language instruction. These passages will be used to test language learners with their corresponding literacy levels. Separate each passage with a new line.'
 
 def returnPrompts(sysinput, cinput):
     response = openai.ChatCompletion.create(
@@ -19,18 +18,18 @@ def returnPrompts(sysinput, cinput):
         messages=[
         {"role": "system", "content": sysinput},
         {"role": "user", "content": cinput}],
-        temperature=0,
-        presence_penalty = 0
+        temperature=0.2,
     )
     passages = response['choices'][0]['message']['content']
     return passages
 
 passages = returnPrompts(initInstruction, cinput)
+print("PASSAGES: " + passages)
 
 #diff definitions of difficulty
 intro = 'You are a writer tasked with modifying a set of passages to a set of instructions. These are the instructions: '
 beginnerInstruction = 'Modify the following passages to beginner level korean, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. If it is not in korean, translate it. Always put #### before every passage generated.  Do not number or label the passages.'
-intermediateInstruction = 'Modify the following passages to intermediate level, which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences. Always separate every passage that is generated with #### as a delimiter. Do not number or label the passages.'
+intermediateInstruction = 'Modify the following passages to intermediate level korean, which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences. Always put #### before every passage generated. Do not number or label the passages.'
 advancedInstruction = 'Modify the following passages to advanced level, which means that the language used has complex grammar, contains infrequent vocabulary words and jargon, and has lengthy sentences. Always separate every passage that is generated with #### as a delimiter Do not number or label the passages.'
 
 difficulty = int(input("difficulty level, 1 for beginner, 2 for intermediate, 3 for advanced: "))
@@ -82,10 +81,10 @@ with open(importfile, "r") as rf:
     dict = json.load(rf)
 
 for i in range(len(arr)):
-    #if len(arr[i]) <= 200 and arr[i] == arr[-1]:
-    #    break
-    #elif len(arr[i]) <= 200:
-    #    arr[i] = arr[i+1]
+    if len(arr[i]) <= 200 and arr[i] == arr[-1]:
+        break
+    elif len(arr[i]) <= 200:
+        arr[i] = arr[i+1]
     pintro = 'QUERY: Classify this passage in english as one of the following - Culture, Astronomy, School, Food, Sports, or Other. Give a one word response. Pick ONLY from these categories.' + arr[i]
     classification = classifyPassages(pintro)
     print(classification)
