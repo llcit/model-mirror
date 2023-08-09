@@ -1,6 +1,8 @@
 import openai
+import os
 
-APIKEY = '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'
+
+APIKEY = os.environ['OPENAI_API_KEY']
 openai.api_key = APIKEY
 
 initInstruction = 'You are a writer tasked with creating 5 120-word passages based on a paragraph of source material. You may draw from other sources in this writing.'
