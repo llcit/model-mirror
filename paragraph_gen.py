@@ -1,6 +1,6 @@
 import openai
 import json
-import os
+import os  # used to read in environment variable
 
 APIKEY = os.environ['OPENAI_API_KEY']
 openai.api_key = APIKEY
