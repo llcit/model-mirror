@@ -41,17 +41,19 @@ def classifyPassages(cinput):
 with open('paragraphmaterial.txt', 'r') as f:
     cinput = f.read()
 
-text = 'QUERY: generate 5 new, extremely unique 200-word passages with differing word choice from this source material: ' + cinput + '. Do not directly copy this material, you may use your own sources if necessary.'
+text = 'QUERY: generate 5 new, extremely unique 200-word passages with differing word choice from this source material: ' + cinput + '. Do not directly copy this material, you may use your own sources if necessary. Do not label the passages AT ALL'
 initInstruction = "You are a creative language teacher tasked with writing 5 unique beginner level 200 word passages for the purpose of language instruction. Separate every passage with #### as a delimiter, always do this. Do not copy the source material. Do not label the passages with 'Passage 1' or anything similar."
 
-basePassages = returnPrompts(initInstruction, cinput)
+basePassages = returnPrompts(initInstruction, text)
 print(basePassages)
 basePassages = basePassages.split("####")
 
-intro = 'You are a language teacher tasked with modifying a set of passages to a set of instructions. These are the instructions: '
-beginnerInstruction = 'Translate the following passages to beginner level korean, which means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Most importantly, it must be very easy to read and understand. Every passage must be in korean.'
+intro = 'You are a language teacher tasked with modifying a given set of paragraphs to a set of instructions. Only include the passages in the response.'
+beginnerInstruction = 'Beginner level korean means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Most importantly, it must be very easy to read and understand. The length of the passage should be the equivalent of 100 english words.'
 intermediateInstruction = 'Modify the following passages to intermediate level korean, which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences.'
 advancedInstruction = 'Modify the following passages to advanced level, which means that the language used has complex grammar, contains infrequent vocabulary words and jargon, and has lengthy sentences.'
+
+basecinput =  'Modify this passage to beginner level korean. Do not include anything other than the following passage:'
 
 difficulty = int(input("difficulty level, 1 for beginner, 2 for intermediate, 3 for advanced: "))
 print('Input Received: ' + str(difficulty))
@@ -71,11 +73,12 @@ with open(importfile, "r") as rf:
     dict = json.load(rf)
 
 for i in range(len(basePassages)):
-    if len(basePassages[i]) <= 200 and basePassages[i] == basePassages[-1]:
-        break
-    elif len(basePassages[i]) <= 200:
-        basePassages[i] = basePassages[i+1]
-    finalPassages.append(simplifyReplies(userInput,basePassages[i]))
+    # if len(basePassages[i]) <= 100 and basePassages[i] == basePassages[-1]:
+    #    break
+    #elif len(basePassages[i]) <= 100:
+    #    basePassages[i] = basePassages[i+1]
+    finalPassages.append(simplifyReplies(userInput,(basecinput + basePassages[i])))
+    print(finalPassages[i])
     pintro = 'QUERY: Classify this passage in english as one of the following - Culture, Astronomy, School, Food, Sports, or Other. Give a one word response. Pick ONLY from these categories.' + finalPassages[i]
     classification = classifyPassages(pintro)
     print(classification)
