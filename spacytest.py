@@ -9,10 +9,15 @@ for sent in doc.sents:
     nounFound = False
     for token in sent:
         if token.pos_ == 'NOUN' and nounFound is False:
-            token = "NOUN"
+            token = " NOUN"
             nounFound = True
-        base += str(token)
-
+        elif token.pos_ == 'PUNCT':
+            token = str(token)
+        else:
+            token = " " + str(token)
+        base = base + token
+        
+base = base.lstrip(' ')
 print(doc.text + '\n\n')
 print(base)
 #        print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_,
