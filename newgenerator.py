@@ -41,12 +41,14 @@ def classifyPassages(cinput):
 with open('paragraphmaterial.txt', 'r') as f:
     cinput = f.read()
 
-text = 'QUERY: generate 5 new, extremely unique 200-word passages with differing word choice from this source material: ' + cinput + '. Do not directly copy this material, you may use your own sources if necessary. Do not label the passages AT ALL'
+text = 'QUERY: write FIVE unique, distinct 200-word passages with differing word choice from this source material: ' + cinput + '. Do not directly copy this material, you may use your own sources if necessary. Do not label the passages AT ALL. Each passage should talk about different parts of the sample text in more detail.'
 initInstruction = "You are a creative language teacher tasked with writing 5 unique beginner level 200 word passages for the purpose of language instruction. Separate every passage with #### as a delimiter, always do this. Do not copy the source material. Do not label the passages with 'Passage 1' or anything similar."
 
 basePassages = returnPrompts(initInstruction, text)
+basePassages.replace("\n","")
 print(basePassages)
 basePassages = basePassages.split("####")
+basePassages.pop(0)
 
 intro = 'You are a language teacher tasked with modifying a given set of paragraphs to a set of instructions. Only include the passages in the response.'
 beginnerInstruction = 'Beginner level korean means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Most importantly, it must be very easy to read and understand. The length of the passage should be the equivalent of 100 english words.'
@@ -71,7 +73,7 @@ finalPassages = []
 
 with open(importfile, "r") as rf:
     dict = json.load(rf)
-
+    
 for i in range(len(basePassages)):
     # if len(basePassages[i]) <= 100 and basePassages[i] == basePassages[-1]:
     #    break
