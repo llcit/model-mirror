@@ -31,6 +31,6 @@ posIncluded = True
 if lang == 'korean':
     print(koreanGen(posIncluded, passage))
 elif lang == 'chinese:':
-    print(portugueseGen(posIncluded, passage))
-elif lang == 'portuguese':
     print(chineseGen(posIncluded, passage))
+elif lang == 'portuguese':
+    print(portugueseGen(posIncluded, passage))

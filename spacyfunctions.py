@@ -1,7 +1,7 @@
 import spacy
 
 def chineseGen(posIncluded, passage):
-    nlp = spacy.load(passage)
+    nlp = spacy.load('zh_core_web_trf')
     doc = nlp(passage)
     assert doc.has_annotation("SENT_START")
     base = ""
