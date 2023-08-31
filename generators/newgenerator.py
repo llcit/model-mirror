@@ -73,7 +73,7 @@ else:
 
 finalPassages = []
 
-with open(importfile, "r") as rf:
+with open('./databases/'+ importfile, "r") as rf:
     dict = json.load(rf)
     
 for i in range(len(basePassages)):
@@ -96,5 +96,5 @@ for i in range(len(basePassages)):
     else:
         dict["Other"].append(finalPassages[i])
 
-with open(importfile, "w") as wf:
+with open('./databases/' + importfile, "w") as wf:
     json.dump(dict, wf)

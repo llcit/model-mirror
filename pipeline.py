@@ -1,7 +1,6 @@
 import json
 from random import *
 from spacyfunctions import *
-import os
 
 lang = input("Choose a language from Portuguese, Korean, or Chinese: ")
 print('Input Received: ' + str(lang))
@@ -15,7 +14,7 @@ elif difficulty == 3:
     importfile = lang + 'advdata.json'
 
 
-with open(importfile) as rf:
+with open('./databases/' + importfile) as rf:
     dict = json.load(rf)
 
 options = ""
@@ -29,9 +28,9 @@ index = randint(0, len(dict[genre])-1)
 passage = dict[genre][index]
 
 posIncluded = True
-if lang is 'korean':
+if lang == 'korean':
     print(koreanGen(posIncluded, passage))
-elif lang is 'chinese:':
+elif lang == 'chinese:':
     print(portugueseGen(posIncluded, passage))
-elif lang is 'portuguese':
+elif lang == 'portuguese':
     print(chineseGen(posIncluded, passage))
