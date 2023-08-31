@@ -14,9 +14,10 @@ for sent in doc.sents:
         if counter%2 == 0 and nounFound is False and len(token.shape_) > 1 and sentencecounter != 1:
             ttoken = str(token)
             newword, trash = divmod(len(ttoken), 2)
-            ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
+            ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*" + "(" + token.pos_ + ")"
             #nounFound = True
         elif token.pos_ == 'PUNCT':
+            print('\ntriggered\n')
             ttoken = str(token)
         else:
             ttoken = " " + str(token)
