@@ -22,15 +22,23 @@ options = ""
 for topic in dict:
     options = options + '\n' + str(topic)
 
-genre = input("Input the topic you would like to receive: " + options + "\n")
+#genre = input("Input the topic you would like to receive: " + options + "\n")
 
-index = randint(0, len(dict[genre])-1)
-passage = dict[genre][index]
-
-posIncluded = True
-if lang == 'korean':
-    print(koreanGen(posIncluded, passage))
-elif lang == 'chinese:':
-    print(chineseGen(posIncluded, passage))
-elif lang == 'portuguese':
-    print(portugueseGen(posIncluded, passage))
+#index = randint(0, len(dict[genre])-1)
+for genre in dict:
+    passages = dict[genre]
+    print(genre + ": \n")
+    if len(passages) > 0:
+        for index in range(len(passages)):
+            print('Passage ' + str(index+1) + ':\n')
+            passage = passages[index] 
+            passage.replace("\n", "")
+            # posIncluded = True
+            if lang == 'korean':
+                print('a: ' + koreanGen(False, passage) + '\n')
+                print('b: ' + koreanGen(True, passage) + '\n')
+            elif lang == 'chinese':
+                print(chineseGen(False, passage) + '\n')
+                print(chineseGen(True, passage) + '\n')
+            elif lang == 'portuguese':
+                print(portugueseGen(True, passage) + '\n')
