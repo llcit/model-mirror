@@ -62,7 +62,13 @@ elif num == 2:
             print(f'{genre} is empty! Please try again')
     index = randint(0, len(dict[difficulty][genre])-1)
     passage = dict[difficulty][genre][index]
-    sf.printAllTypes(passage, lang)
+    if num2 == 1:
+        sf.printAllTypes(passage, lang)
+    elif num2 == 2:
+        t = time.localtime()
+        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+        file = open(f'./testfiles/ctest{mod}', 'w')
+        sf.writeAllTypes(passage, lang, file)
 elif num == 3:
     while True:
         genre = input(f"Please choose a genre from {', '.join(genres)}: ")
@@ -73,7 +79,13 @@ elif num == 3:
     for index in range(len(dict[difficulty][genre])):
         print(f'Passage Group {index+1}:\n')
         passage = dict[difficulty][genre][index]
-        sf.printAllTypes(passage, lang)
+        if num2 == 1:
+            sf.printAllTypes(passage, lang)
+        elif num2 == 2:
+            t = time.localtime()
+            mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+            file = open(f'./testfiles/ctest{mod}', 'w')
+            sf.writeAllTypes(passage, lang, file)
 elif num == 4:
     for genre in dict[difficulty]:
         passages = dict[difficulty][genre]
@@ -82,7 +94,13 @@ elif num == 4:
             for index in range(len(passages)):
                 print(f'Passage Group {index+1}:\n')
                 passage = passages[index]
-                sf.printAllTypes(passage, lang)
+                if num2 == 1:
+                    sf.printAllTypes(passage, lang)
+                elif num2 == 2:
+                    t = time.localtime()
+                    mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+                    file = open(f'./testfiles/ctest{mod}', 'w')
+                    sf.writeAllTypes(passage, lang, file)
 elif num == 5:
     for difficulty in dict:
         print(difficulty + ":\n")
@@ -93,7 +111,13 @@ elif num == 5:
                 for index in range(len(passages)):
                     print(f'Passage Group {index+1}:\n')
                     passage = passages[index]
-                    sf.printAllTypes(passage, lang)
+                    if num2 == 1:
+                        sf.printAllTypes(passage, lang)
+                    elif num2 == 2:
+                        t = time.localtime()
+                        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+                        file = open(f'./testfiles/ctest{mod}', 'w')
+                        sf.writeAllTypes(passage, lang, file)
 
 # for difficulty in dict:
 #     for genre in dict[difficulty]:
