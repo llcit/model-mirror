@@ -44,11 +44,11 @@ with open('paragraphmaterial.txt', 'r') as f:
 language = input('Please select a language: english, korean, portuguese, or chinese: ')
 language = language.lower()
 intro = 'You are a multilingual language expert tasked with modifying a sample passage to a set of instructions. Only include the passages in the response.'
-beginnerInstruction = ' Modify the passage to beginner level ' + language + '. Beginner level means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Most importantly, it must be very easy to read and understand. The length of the passage should be the equivalent of 100 english words. Do not include anything other than the resulting passage.'
-intermediateInstruction = 'Modify the following passages to intermediate level ' + language + ' which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences.'
-advancedInstruction = 'Modify the following passages to advanced level ' + language + ' , which means that the language used has complex grammar, contains infrequent vocabulary words and jargon, and has lengthy sentences.'
+beginnerInstruction = f'Modify the passage to beginner level {language}. Beginner level means the language used has short sentences, simple grammar patterns, and uses vocabulary words of high frequency. Most importantly, it must be very easy to read and understand. The length of the passage should be the equivalent of 100 english words. Do not include anything other than the resulting passage.'
+intermediateInstruction = f'Modify the following passages to intermediate level {language} which means that the language used has somewhat complex grammar, more infrequent vocabulary, and longer sentences, but does not contain extremely complex grammar, jargon, or complex sentences.'
+advancedInstruction = f'Modify the following passages to advanced level {language} , which means that the language used has complex grammar, contains infrequent vocabulary words and jargon, and has lengthy sentences.'
 
-basecinput =  'Modify this passage to beginner level ' + language + '. Do not include anything other than the following passage:'
+basecinput =  f'Modify this passage to beginner level {language}. Do not include anything other than the following passage:'
 
 difficulty = int(input("difficulty level, 1 for beginner, 2 for intermediate, 3 for advanced: "))
 print('Input Received: ' + str(difficulty))
@@ -71,7 +71,7 @@ print(basePassages)
 basePassages = basePassages.split("####")
 basePassages.pop(0)
 
-importfile = language + 'Passages.json'
+importfile = f'{language}Passages.json'
 
 finalPassages = []
 
@@ -81,7 +81,7 @@ with open('./databases/'+ importfile, "r") as rf:
 for i in range(len(basePassages)):
     finalPassages.append(simplifyReplies(intro, (userInput + basePassages[i])))
     finalPassages[i] = ''.join(finalPassages[i].splitlines())
-    pintro = 'QUERY: Classify this passage in english as one of the following - . Pick ONLY from these categories and only respond with that category as a response: "history, math, popculture, fiction, language, sports, business, science, or other.' + finalPassages[i]
+    pintro = f'QUERY: Classify this passage in english. Pick ONLY from these categories and only respond with that category as a response: "history, math, popculture, fiction, language, sports, business, science, or other {finalPassages[i]}.'
     classification = classifyPassages(pintro)
     classification.lower()
     dict[difficulty][classification].append(finalPassages[i])

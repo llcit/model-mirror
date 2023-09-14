@@ -1,0 +1,35 @@
+{
+    "beginner": {
+        "history": [],
+        "math": [],
+        "popculture": [],
+        "fiction": [],
+        "language": [],
+        "sports": [],
+        "business": [],
+        "science": [],
+        "other": []
+    },
+    "intermediate": {
+        "history": [],
+        "math": [],
+        "popculture": [],
+        "fiction": [],
+        "language": [],
+        "sports": [],
+        "business": [],
+        "science": [],
+        "other": []
+    },
+    "advanced": {
+        "history": [],
+        "math": [],
+        "popculture": [],
+        "fiction": [],
+        "language": [],
+        "sports": [],
+        "business": [],
+        "science": [],
+        "other": []
+    }
+}
