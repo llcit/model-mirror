@@ -480,7 +480,7 @@ def japaneseGen(posIncluded, passage):
         for token in sent:
             if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
                 ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                if token.pos_ != 'PROPN' and token.pos_ != 'NUM' and token.pos_ != 'X':
                     newword, trash = divmod(len(ttoken), 2)
                     if posIncluded is True:
                         ttoken = f'{ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -491,11 +491,10 @@ def japaneseGen(posIncluded, passage):
             elif token.pos_ == 'PUNCT':
                 ttoken = str(token)
             else:
-                ttoken = " " + str(token)
+                ttoken = str(token)
             counter = counter + 1
             base = base + ttoken
         sentcounter = sentcounter + 1
-            
     base = base.lstrip(' ')
     #print(doc.text + '\n\n')
     return base

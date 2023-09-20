@@ -75,7 +75,7 @@ importfile = f'{language}Passages.json'
 
 finalPassages = []
 
-with open('./databases/'+ importfile, "r") as rf:
+with open('./passage-databases/'+ importfile, "r") as rf:
     dict = json.load(rf)
     
 for i in range(len(basePassages)):
@@ -86,5 +86,5 @@ for i in range(len(basePassages)):
     classification.lower()
     dict[difficulty][classification].append(finalPassages[i])
 
-with open('./databases/' + importfile, "w") as wf:
+with open('./passage-databases/' + importfile, "w") as wf:
     json.dump(dict, wf)
