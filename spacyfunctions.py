@@ -273,6 +273,7 @@ def spanishGen(passage):
 def japaneseGen(passage):
     return testGen(passage, 'japanese')
 
+#Print all tests to terminal
 def printAllTypes(passage, lang):
     ctestPos = testGen(passage, lang, True)
     ctestnPos = testGen(passage, lang, False)
@@ -280,6 +281,7 @@ def printAllTypes(passage, lang):
     print(f'C-Test (No Parts of Speech):\n{ctestnPos}\n')
     print(f'C-Test (Parts of Speech):\n{ctestPos}')
 
+#Print all tests to file
 def writeAllTypes(passage, lang, file):
     ctestPos = testGen(passage, lang, True)
     ctestnPos = testGen(passage, lang, False)
@@ -287,6 +289,7 @@ def writeAllTypes(passage, lang, file):
     file.write(f'C-Test (No Parts of Speech):\n{ctestnPos}\n')
     file.write(f'C-Test (Parts of Speech):\n{ctestPos}')
 
+#deletes whole words
 def modularGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclude=['PROPN', 'NUM']):
     if language == 'portuguese':
         nlp = spacy.load('pt_core_news_lg')
@@ -301,7 +304,6 @@ def modularGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posEx
                 if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
                     if token.pos_ not in posExclude:
-                        print('TRIGGERED')
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'

@@ -54,5 +54,5 @@
         "cancelLabel": "Cancel",
         "confirmLabel": "Confirm"
     },
-    "questions": [""]
+    "questions": []
 }

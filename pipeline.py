@@ -37,7 +37,7 @@ with open(f'./passage-databases/{importfile}') as rf:
 genres = list(dict[difficulty].keys())
 
 num = int(input('Please select an option: \nINPUT 1: Random C-test\nINPUT 2: Random C-Test from selected genre\nINPUT 3: All passages within a selected difficulty and genre converted to C-tests in input language\nINPUT 4: All passages in all genres within a selected difficulty converted to C-tests in input language\nINPUT 5: All passages converted to C-tests in input language\n'))
-num2 = int(input('INPUT 1: Terminal\nINPUT 2: .txt\n'))
+num2 = int(input('INPUT 1: Terminal\nINPUT 2: .txt\nINPUT 3: h5p content'))
 if num == 1:
     while True: 
         gIndex = randint(0, len(genres)-1)
@@ -53,6 +53,14 @@ if num == 1:
         mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
         file = open(f'./testfiles/ctest{mod}', 'w')
         sf.writeAllTypes(passage, lang, file)
+    elif num2 == 3:
+        t = time.localtime()
+        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+        with open ('./h5pdev/content-template.json', 'r') as f:
+            d = json.loads(f.read())
+        d["questions"] = passage
+        with open(f'./h5pdev/{mod}/content.json', "w") as wf:
+            json.dump(d, wf)
 elif num == 2:
     while True:
         genre = input(f"Please choose a genre from {', '.join(genres)}: ")
