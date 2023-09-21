@@ -1,6 +1,7 @@
 import spacy
 
-def languageGen(posIncluded, passage, language):
+#standard c-tests
+def testGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclude=['PROPN', 'NUM', 'X', 'SPACE']):
     if language == 'chinese':
         nlp = spacy.load('zh_core_web_trf')
         doc = nlp(passage)
@@ -11,8 +12,8 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
+                    if token.pos_ not in posExclude and (('a' or 'e' or 'i' or 'u' or 'y' or 'o') not in ttoken):
                         ttoken = str(token)
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded == True:
@@ -41,9 +42,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentencecounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentencecounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'X' and token.pos_ !='SPACE' and token.pos_ != 'NUM' and token.pos_ != 'PROPN' and (('a' or 'e' or 'i' or 'u' or 'y' or 'o') not in ttoken):
+                    if token.pos_ not in posExclude and (('a' or 'e' or 'i' or 'u' or 'y' or 'o') not in ttoken):
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -70,9 +71,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                    if token.pos_ not in posExclude:
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -101,9 +102,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                    if token.pos_ not in posExclude:
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -132,9 +133,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                    if token.pos_ not in posExclude:
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -163,9 +164,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                    if token.pos_ not in posExclude:
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -194,9 +195,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                    if token.pos_ not in posExclude:
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -225,9 +226,9 @@ def languageGen(posIncluded, passage, language):
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
                     ttoken = str(token)
-                    if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
+                    if token.pos_ not in posExclude:
                         newword, trash = divmod(len(ttoken), 2)
                         if posIncluded is True:
                             ttoken = f'{ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
@@ -247,268 +248,75 @@ def languageGen(posIncluded, passage, language):
         #print(doc.text + '\n\n')
         return base
 
-def chineseGen(posIncluded, passage):
-    nlp = spacy.load('zh_core_web_trf')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
-                    ttoken = str(token)
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded == True:
-                        ttoken = f'{ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = str(token)
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token) + " "
-            else:
-                ttoken = str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-            
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+#return basic C-tests in language-specific functions
+def chineseGen(passage):
+    return testGen(passage, 'chinese')
 
-def koreanGen(posIncluded, passage):
-    nlp = spacy.load('ko_core_news_lg')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentencecounter = 1
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentencecounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'X' and token.pos_ !='SPACE' and token.pos_ != 'NUM' and token.pos_ != 'PROPN' and (('a' or 'e' or 'i' or 'u' or 'y' or 'o') not in ttoken):
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = " " + ttoken
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = " " + str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentencecounter = sentencecounter + 1
-    base = base.lstrip(' ')
-    return base
+def koreanGen(passage):
+    return testGen(passage, 'korean')
 
-def portugueseGen(posIncluded, passage):
-    nlp = spacy.load('pt_core_news_lg')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = " " + ttoken
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = " " + str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-            
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+def portugueseGen(passage):
+    return testGen(passage, 'portuguese')
 
-def frenchGen(posIncluded, passage):
-    nlp = spacy.load('fr_dep_news_trf')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = " " + ttoken
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = " " + str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-            
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+def frenchGen(passage):
+    return testGen(passage, 'french')
 
-def germanGen(posIncluded, passage):
-    nlp = spacy.load('de_dep_news_trf')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = " " + ttoken
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = " " + str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-            
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+def germanGen(passage):
+    return testGen(passage, 'german')
 
-def russianGen(posIncluded, passage):
-    nlp = spacy.load('ru_core_news_lg')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = " " + ttoken
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = " " + str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-            
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+def russianGen(passage):
+    return testGen(passage, 'russian')
 
-def spanishPassages(posIncluded, passage):
-    nlp = spacy.load('es_dep_news_trf')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM':
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = " " + ttoken
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = " " + str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-            
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+def spanishGen(passage):
+    return testGen(passage, 'spanish')
 
-def japaneseGen(posIncluded, passage):
-    nlp = spacy.load('ja_core_news_trf')
-    doc = nlp(passage)
-    assert doc.has_annotation("SENT_START")
-    base = ""
-    sentcounter = 1
-    #every word w token.pos >2 gap astrix before+after gap
-    for sent in doc.sents:
-        counter = 1
-        for token in sent:
-            if counter%2 == 0 and len(token.shape_) > 1 and sentcounter != 1:
-                ttoken = str(token)
-                if token.pos_ != 'PROPN' and token.pos_ != 'NUM' and token.pos_ != 'X':
-                    newword, trash = divmod(len(ttoken), 2)
-                    if posIncluded is True:
-                        ttoken = f'{ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                    else:
-                        ttoken = ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                else:
-                    ttoken = str(token)
-            elif token.pos_ == 'PUNCT':
-                ttoken = str(token)
-            else:
-                ttoken = str(token)
-            counter = counter + 1
-            base = base + ttoken
-        sentcounter = sentcounter + 1
-    base = base.lstrip(' ')
-    #print(doc.text + '\n\n')
-    return base
+def japaneseGen(passage):
+    return testGen(passage, 'japanese')
 
 def printAllTypes(passage, lang):
-    ctestPos = languageGen(True, passage, lang)
-    ctestnPos = languageGen(False, passage, lang)
+    ctestPos = testGen(passage, lang, True)
+    ctestnPos = testGen(passage, lang, False)
     print(f'Original Passage:\n{passage}\n')
     print(f'C-Test (No Parts of Speech):\n{ctestnPos}\n')
     print(f'C-Test (Parts of Speech):\n{ctestPos}')
 
 def writeAllTypes(passage, lang, file):
-    ctestPos = languageGen(True, passage, lang)
-    ctestnPos = languageGen(False, passage, lang)
+    ctestPos = testGen(passage, lang, True)
+    ctestnPos = testGen(passage, lang, False)
     file.write(f'Original Passage:\n{passage}\n')
     file.write(f'C-Test (No Parts of Speech):\n{ctestnPos}\n')
     file.write(f'C-Test (Parts of Speech):\n{ctestPos}')
+
+def modularGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclude=['PROPN', 'NUM']):
+    if language == 'portuguese':
+        nlp = spacy.load('pt_core_news_lg')
+        doc = nlp(passage)
+        assert doc.has_annotation("SENT_START")
+        base = ""
+        sentcounter = 1
+        #every word w token.pos >2 gap astrix before+after gap
+        for sent in doc.sents:
+            counter = 1
+            for token in sent:
+                if counter%freq == 0 and len(token.shape_) > lenExclude and sentcounter != 1:
+                    ttoken = str(token)
+                    if token.pos_ not in posExclude:
+                        print('TRIGGERED')
+                        newword, trash = divmod(len(ttoken), 2)
+                        if posIncluded is True:
+                            ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
+                        else:
+                            ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
+                    else:
+                        ttoken = " " + ttoken
+                elif token.pos_ == 'PUNCT':
+                    ttoken = str(token)
+                else:
+                    ttoken = " " + str(token)
+                counter = counter + 1
+                base = base + ttoken
+            sentcounter = sentcounter + 1
+                
+        base = base.lstrip(' ')
+        #print(doc.text + '\n\n')
+        return base
