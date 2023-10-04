@@ -19,4 +19,11 @@ with open ('content-template.json', 'r') as f:
 3. Create new directory with name with a random guid.
 
 4. Serialize d in json: json.dumps(d)
+
 5. Write d as a new file named 'content.json' to directory created in 3.
+
+
+Testing in Browser
+1. Open viewer.html, change DIRNAME in Javascript with name of directory created in 3.
+
+2. Save an load viewer.html in browser.
