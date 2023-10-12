@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>H5P</title>
+</head>
+
+<body>
+    <h1>C-Test Samples in English</h1>
+
+    <div style="margin: 0 100px 200px 100px;">
+    	<select id="ctest-select" style="font-size: 16px;">
+		    <option value="">--Please choose a passage--</option>
+		    <option value="eng001">eng001</option>
+		    <option value="eng002">eng002</option>
+		</select>
+	<div>
+
+    <div id='h5p-container' style="margin: 40px 100px 0 100px;"></div>
+    
+    <script type="text/javascript" src="assets/main.bundle.js"></script>
+    <script type="text/javascript">
+		
+		function ctest_loader(event) {
+
+	    	const CPATH = 'crepo/' + event.target.value;
+	    	console.log(CPATH);
+	    	const el = document.getElementById('h5p-container');
+	    	el.innerHTML = '';
+		    const options = {
+		        h5pJsonPath: 'repo/c-test',
+		        contentJsonPath: CPATH,
+		        frameJs: 'assets/frame.bundle.js',
+		        frameCss: 'assets/styles/h5p.css',
+		    }
+		    new H5PStandalone.H5P(el, options);
+		}
+    	const opt = document.getElementById("ctest-select");
+    	opt.addEventListener("change", ctest_loader);
+		
+	    H5P.externalDispatcher.on("xAPI", (event) => {
+	        //Event emitter. See H5P/xAPI docs.
+	        //https://h5p.org/documentation/api/H5P.XAPIEvent.html						
+	        if (event.getVerb(false) === 'answered') {
+	            console.log(event);
+	            console.log("SCORE:", event.data.statement.result.score.max);
+	            console.log(event.data.statement.object.definition.description["en-US"]);
+	            console.log(event.getVerifiedStatementValue(['result', 'score']));
+	        }
+	    });
+    </script>
+</body>
+</html>
