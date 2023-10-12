@@ -1,7 +1,7 @@
 import json
 from random import randint
-import time
 import spacyfunctions as sf
+import os
 
 #Welcome to the pipeline! Everything should work when running this main file.
 
@@ -49,17 +49,18 @@ if num == 1:
     if num2 == 1:
         sf.printAllTypes(passage, lang)
     elif num2 == 2:
-        t = time.localtime()
-        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+        mod = sf.fileTimeMod()
         file = open(f'./testfiles/ctest{mod}', 'w')
         sf.writeAllTypes(passage, lang, file)
     elif num2 == 3:
-        t = time.localtime()
-        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
-        with open ('./h5pdev/content-template.json', 'r') as f:
+        mod = sf.fileTimeMod()
+        with open('./h5pdev/content-template.json', 'r') as f:
             d = json.loads(f.read())
-        d["questions"] = passage
-        with open(f'./h5pdev/{mod}/content.json', "w") as wf:
+        ctest = sf.testGen(passage, lang)
+        d["questions"] = ctest
+        path = f'./h5pdev/ctests/sample{mod}'
+        os.mkdir(path)
+        with open(f'./h5pdev/ctests/content.json', "x") as wf:
             json.dump(d, wf)
 elif num == 2:
     while True:
@@ -73,10 +74,18 @@ elif num == 2:
     if num2 == 1:
         sf.printAllTypes(passage, lang)
     elif num2 == 2:
-        t = time.localtime()
-        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+        mod = sf.fileTimeMod()
         file = open(f'./testfiles/ctest{mod}', 'w')
         sf.writeAllTypes(passage, lang, file)
+    elif num2 == 3:
+        mod = sf.fileTimeMod()
+        with open('./h5pdev/content-template.json', 'r') as f:
+            d = json.loads(f.read())
+        d["questions"] = passage
+        path = f'./h5pdev/ctests/sample{mod}'
+        os.mkdir(path)
+        with open(f'./h5pdev/ctests/content.json', "x") as wf:
+            json.dump(d, wf)
 elif num == 3:
     while True:
         genre = input(f"Please choose a genre from {', '.join(genres)}: ")
@@ -90,10 +99,18 @@ elif num == 3:
         if num2 == 1:
             sf.printAllTypes(passage, lang)
         elif num2 == 2:
-            t = time.localtime()
-            mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+            mod = sf.fileTimeMod()
             file = open(f'./testfiles/ctest{mod}', 'w')
             sf.writeAllTypes(passage, lang, file)
+        elif num2 == 3:
+            mod = sf.fileTimeMod()
+            with open('./h5pdev/content-template.json', 'r') as f:
+                d = json.loads(f.read())
+            d["questions"] = passage
+            path = f'./h5pdev/ctests/sample{mod}'
+            os.mkdir(path)
+            with open(f'./h5pdev/ctests/content.json', "x") as wf:
+                json.dump(d, wf)
 elif num == 4:
     for genre in dict[difficulty]:
         passages = dict[difficulty][genre]
@@ -105,10 +122,18 @@ elif num == 4:
                 if num2 == 1:
                     sf.printAllTypes(passage, lang)
                 elif num2 == 2:
-                    t = time.localtime()
-                    mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+                    mod = sf.fileTimeMod()
                     file = open(f'./testfiles/ctest{mod}', 'w')
                     sf.writeAllTypes(passage, lang, file)
+                elif num2 == 3:
+                    mod = sf.fileTimeMod()
+                    with open('./h5pdev/content-template.json', 'r') as f:
+                        d = json.loads(f.read())
+                    d["questions"] = passage
+                    path = f'./h5pdev/ctests/sample{mod}'
+                    os.mkdir(path)
+                    with open(f'./h5pdev/ctests/content.json', "x") as wf:
+                        json.dump(d, wf)
 elif num == 5:
     for difficulty in dict:
         print(difficulty + ":\n")
@@ -122,28 +147,15 @@ elif num == 5:
                     if num2 == 1:
                         sf.printAllTypes(passage, lang)
                     elif num2 == 2:
-                        t = time.localtime()
-                        mod = f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
+                        mod = sf.fileTimeMod()
                         file = open(f'./testfiles/ctest{mod}', 'w')
                         sf.writeAllTypes(passage, lang, file)
-
-# for difficulty in dict:
-#     for genre in dict[difficulty]:
-#         passages = dict[difficulty][genre]
-#         print(genre + ": \n")
-#         if len(passages) > 0:
-#             for index in range(len(passages)):
-#                 print('Passage ' + str(index+1) + ':\n')
-#                 passage = passages[index] 
-#                 passage.replace("\n", "")
-#                 # posIncluded = True
-#                 if lang == 'korean':
-#                     print('a: ' + sf.koreanGen(False, passage) + '\n')
-#                     print('b: ' + sf.koreanGen(True, passage) + '\n')
-#                 elif lang == 'chinese':
-#                     print(sf.chineseGen(False, passage) + '\n')
-#                     print(sf.chineseGen(True, passage) + '\n')
-#                 elif lang == 'portuguese':
-#                     print(sf.portugueseGen(True, passage) + '\n')
-#                 elif lang == 'japanese':
-#                     print(sf.japaneseGen(True, passage) + '\n')
+                    elif num2 == 3:
+                        mod = sf.fileTimeMod()
+                        with open('./h5pdev/content-template.json', 'r') as f:
+                            d = json.loads(f.read())
+                        d["questions"] = passage
+                        path = f'./h5pdev/ctests/sample{mod}'
+                        os.mkdir(path)
+                        with open(f'./h5pdev/ctests/content.json', "x") as wf:
+                            json.dump(d, wf)

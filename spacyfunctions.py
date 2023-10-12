@@ -1,5 +1,5 @@
 import spacy
-
+import time
 #standard c-tests
 def testGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclude=['PROPN', 'NUM', 'X', 'SPACE']):
     if language == 'chinese':
@@ -288,6 +288,10 @@ def writeAllTypes(passage, lang, file):
     file.write(f'Original Passage:\n{passage}\n')
     file.write(f'C-Test (No Parts of Speech):\n{ctestnPos}\n')
     file.write(f'C-Test (Parts of Speech):\n{ctestPos}')
+
+def fileTimeMod():
+    t = time.localtime()
+    return f'{str(t.tm_year)}-{str(t.tm_mon)}-{str(t.tm_mday)}_{str(t.tm_hour)}-{str(t.tm_min)}'
 
 #deletes whole words
 def modularGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclude=['PROPN', 'NUM']):
