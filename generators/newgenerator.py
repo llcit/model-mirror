@@ -3,7 +3,9 @@ import json
 import os  # used to read in environment variable
 
 APIKEY = os.environ['OPENAI_API_KEY']
+ORG = os.environ['ORGANIZATION']
 openai.api_key = APIKEY
+openai.organization = ORG
 
 def returnPrompts(sysinput, cinput):
     response = openai.ChatCompletion.create(

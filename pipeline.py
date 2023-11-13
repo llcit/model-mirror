@@ -60,7 +60,7 @@ if num == 1:
         d["questions"] = ctest
         path = f'./h5pdev/ctests/sample{mod}'
         os.mkdir(path)
-        with open(f'./h5pdev/ctests/content.json', "x") as wf:
+        with open(f'.{path}/content.json', "x") as wf:
             json.dump(d, wf)
 elif num == 2:
     while True:
@@ -159,3 +159,20 @@ elif num == 5:
                         os.mkdir(path)
                         with open(f'./h5pdev/ctests/content.json', "x") as wf:
                             json.dump(d, wf)
+elif num == 6:
+    counter = 0
+    for genre in dict[difficulty]:
+        passages = dict[difficulty][genre]
+        print(genre + ":\n")
+        if len(passages) > 0:
+            for index in range(len(passages)):
+                print(f'Passage Group {index+1}:\n')
+                passage = passages[index]
+                print(passage)
+                with open('./h5pdev/content-template.json', 'r') as f:
+                        d = json.loads(f.read())
+                d["questions"] = sf.testGen(passage, lang)
+                path = f'./h5pdev/ctests/{lang[:4]}0{counter}'
+                os.mkdir(path)
+                with open(f'{path}/content.json', "x") as wf:
+                    json.dump(d, wf)
