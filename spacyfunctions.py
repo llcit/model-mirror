@@ -1,7 +1,7 @@
 import spacy
 import time
 #standard c-tests
-def testGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclude=['PROPN', 'NUM', 'X', 'SPACE']):
+def testGen(passage, language, posIncluded=False, lenExclude=2, freq=2, posExclude=['PROPN', 'NUM', 'X', 'SPACE']):
     if language == 'chinese':
         nlp = spacy.load('zh_core_web_trf')
         doc = nlp(passage)
@@ -42,20 +42,33 @@ def testGen(passage, language, posIncluded=False, lenExclude=1, freq=2, posExclu
         for sent in doc.sents:
             counter = 1
             for token in sent:
-                if counter%freq == 0 and len(token.shape_) > lenExclude and sentencecounter != 1:
-                    ttoken = str(token)
-                    if token.pos_ not in posExclude and (('a' or 'e' or 'i' or 'u' or 'y' or 'o') not in ttoken):
-                        newword, trash = divmod(len(ttoken), 2)
-                        if posIncluded is True:
-                            ttoken = f' {ttoken[:newword]}*{ttoken[newword:]}*({token.pos_})'
-                        else:
-                            ttoken = " " + ttoken[:newword] + "*" + ttoken[newword:] + "*"
-                    else:
-                        ttoken = " " + ttoken
-                elif token.pos_ == 'PUNCT':
+                tlen = len(token.text)
+                if tlen < 2 or token.pos_ in posExclude:
                     ttoken = str(token)
                 else:
-                    ttoken = " " + str(token)
+                    t = token.tag_
+                    p = token.pos_
+                    l = token.lemma_
+                    suffix_idx = l.find('+')
+                    if suffix_idx:
+                        rlen = len(l[:suffix_idx])
+                        particle = token.text[suffix_idx:]
+                        newword = (rlen // 2) + (rlen % 2)
+                    else:
+                        newword = (tlen // 2) + (tlen % 2)
+
+                    if counter % freq == 0 and len(token.shape_) > lenExclude and sentencecounter != 1:
+                        if token.pos_ not in posExclude and (('a' or 'e' or 'i' or 'u' or 'y' or 'o') not in token.text):
+                            if posIncluded is True:
+                                ttoken = f' {token.text[:newword]}*{token.text[newword:]}*({token.pos_})'
+                            else:
+                                ttoken = f' {token.text[:newword]}*{token.text[newword:]}*'
+                        else:
+                            ttoken = " " + token.text
+                    elif token.pos_ == 'PUNCT':
+                        ttoken = str(token)
+                    else:
+                        ttoken = " " + str(token)
                 counter = counter + 1
                 base = base + ttoken
             sentencecounter = sentencecounter + 1
@@ -253,7 +266,28 @@ def chineseGen(passage):
     return testGen(passage, 'chinese')
 
 def koreanGen(passage):
-    return testGen(passage, 'korean')
+    EXCLUDED_TAGS = ['PROPN', 'NUM']
+    nlp = spacy.load('ko_core_news_lg')
+    doc = nlp(passage)
+    assert doc.has_annotation("SENT_START")
+    base = ""
+    sentencecounter = 1
+    for sent in doc.sents:
+        counter = 1
+        for token in sent:
+            tlen = len(token.text)
+            if tlen < 2 or token.pos_ in EXCLUDED_TAGS:
+                continue
+            t = token.tag_
+            p = token.pos_
+            l = token.lemma_
+            print(f'{token.text:{12}} {l:<{12}} {t:{12}} {p:{12}}')
+            suffix_idx = l.find('+') 
+            if suffix_idx:
+                rlen = len(l[:suffix_idx])
+                particle = token.text[suffix_idx:]
+                return (rlen//2) + (rlen%2)
+        return (tlen//2) + (tlen%2)
 
 def portugueseGen(passage):
     return testGen(passage, 'portuguese')

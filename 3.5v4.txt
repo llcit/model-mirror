@@ -1,0 +1,44 @@
+gpt-3.5-1106
+b
+Horses are beautiful animals that come in different colors and can run quickly. People like to watch horses because they are strong and powerful. Horses are mammals that give birth to live young and feed their babies milk. They have long legs and big eyes that can see almost all the way around them. Foals are horses that are one year old or younger, while a filly is a young female horse and a colt is a young male horse. Horses can live up to 20-25 years and sleep standing up to quickly run away from predators.
+
+Horses are beautiful animals with different colors and can run quickly. They are mammals, have long legs, and big eyes that can see almost all the way around them. Foals are young horses. Their hooves need to be taken care of, and they eat grass, hay, oats, corn, apples, and carrots. Horses only need about three hours of sleep per day and can live up to 20-25 years. They sleep standing up and need small, frequent feedings because their stomachs are small.
+
+Horses are mammals and have long legs and big eyes that can see almost all the way around them. They are young horses that can run quickly and jump. A young female horse is called a filly and a young male horse is called a colt. Horses can live up to 20-25 years and sleep standing up. Their hooves are like our fingernails and need to be taken care of. They eat grass, hay, oats, corn, apples, and carrots.
+
+Horses are beautiful animals that come in many different colors and can run quickly. They are mammals that give birth to live young and feed them milk. Foals are young horses, and at four years old, a horse is considered an adult. Their hooves are like our fingernails and need to be trimmed. They eat foods like grass, hay, oats, corn, apples, and carrots. Horses can live up to 20-25 years and sleep standing up so they can run away from predators.
+
+Horses are beautiful animals that come in different colors, have long legs and big eyes, and can run quickly. They are mammals that can give birth to live young and feed their babies milk. Young horses are called foals, and horses can live up to 20-25 years. They eat grass, hay, oats, corn, apples, and carrots. Horses can sleep standing up and only need about three hours of sleep per day. Their hooves are like our fingernails and need to be trimmed.
+
+i
+
+
+gpt-4-1106
+b
+Horses are very pretty and run fast. They have hair and live babies. Baby horses drink milk. Horses have long legs and can see all around. Little horses are called foals. A pony is a small horse, not a baby. Horses sleep while standing and don't sleep a lot. Their feet need care, and they eat plants.
+
+Horses come in lots of colors and are quick. They are strong and have babies that drink milk. Horses can see very well. Baby horses are foals, and ponies are just little horses. Horses can get to be 20 or 25 years old. They sleep standing up, need little sleep, and like eating grass and other plants.
+
+There are horses in many colors, and they can run fast. They are mammals, which means they have fur and warm blood. Little baby horses are called foals. Horses live for a long time, sleep on their feet, and don't need much sleep. They have to get their hooves trimmed and eat things like grass and apples.
+
+Pretty horses can be different colors and like to run. They have babies called foals. Horses need to eat often and like grass and apples. They sleep for just a short time standing up. Horses live for about 20 to 25 years. People help take care of their feet with horseshoes.
+
+Horses are strong animals with different colors. They see really well and can move in many ways. Baby horses are foals. Ponies are small but not babies. Horses sleep a little while standing. They live long and need their hooves looked after. They eat lots of plants but not too much at once.
+
+i
+Horses are admired for their quickness and varied colors. They belong to the mammal group, having fur and giving birth to live young that drink milk. With an ability to see almost in a full circle, horses use their long legs to walk, trot, gallop, and jump. Foals are young horses, whereas a pony is just a small-sized horse, not a young one. Horses live for two decades or more, need minimal sleep while standing, and require hoof care and horseshoes for protection. They graze on plants like grass, oats, and apples and need frequent meals due to small stomachs.
+
+People enjoy the strength and beauty of multi-colored horses, a mammal species known for warmth, fur, and live births. Horses maintain vigilance with their panoramic vision and can perform various gaits. Young horses are termed foals, with specific names for gender and age. Unlike a pony, which is a small horse, horses grow into adulthood by four years and can reach ages of 20 to 25. They rest minimally in a standing position for a quick escape and need their hooves managed. As herbivores, they eat vegetation in small, regular portions.
+
+Renowned for their rapid running and attractive hues, horses captivate onlookers with their vigorous presence. As mammals, horses rear their young, who nurse on milk. Their physical adaptations include lengthy limbs for various movements and nearly 360-degree visual capacity. Distinctions among young horses, foals, and the misconception about ponies are clarified. Horses experience a lifespan of two decades or more, slumber upright for brief periods, and receive hoof care including horseshoe fittings. Their dietary habits encompass plant-based meals consumed in modest, recurrent feedings due to their compact stomachs.
+
+Horses captivate us with their swift speed and spectrum of colors, possessing traits typical of mammals such as live birth and lactation. Equipped with exceptional sight and leg strength, they exhibit multiple movement styles. Foals represent the juvenile stage, and ponies are essentially small horses, not young ones. Horses may live a quarter-century, usually rest on their feet, and require limited sleep. Hoof maintenance is vital, often involving the cyclical application of horseshoes. As herbivores, horses consume a variety of plant matter, necessitating repetitive, light feedings.
+
+The equine allure lies in their speed and powerful stature, with a range of colorings matching their status as mammals, characterized by warm blood, fur, and live offspring feeding on milk. Horses, equipped for full-range vision and a suite of gaits, are distinct in their early years as foals and are not related to ponies, which are permanently small. These creatures achieve two to twenty-five years of lifespan, requiring minimal rest in an upright stance for prompt evasion. Their hoof care is akin to nail trimming, complemented by a herbivorous diet administered in frequent, small portions.
+
+
+C-Test (Parts of Speech):
+우주비행사들은 우주를 탐험합니다. 바다를 항*해한*(VERB) 선원들처럼, 우주비행사들은 우주*선을*(NOUN) 타고 멀*리*(ADV) 여행합니다. 우주는 위*험하지만*(SCONJ), 우*리는*(PRON) 우주에 대*해*(SCONJ)더 배*우고*(VERB) 싶습니다. 우주비행사들은 기*술과*(CCONJ) 용기로 우*주를*(NOUN) 탐험합니다. 우리는 새*로운*(ADJ) 세계를 발*견하고*(VERB) 싶어합니다. 우주비행사들은 지*식을*(NOUN) 찾아 우*주를*(NOUN) 여행합니다. 우리는더 많은 것*을*(NOUN) 알고 싶*어합니다*(AUX).
+
+C-Test (Parts of Speech):
+우주비행사들은 우주를 탐험합니다. 바다를 항*해한*(VERB) 선원들처럼, 우주비행사들은 우주*선을*(NOUN) 타고 멀*리*(ADV) 여행합니다. 우주는 위험*하지만*(SCONJ), 우*리는*(PRON) 우주에 대*해*(SCONJ) 더 배*우고*(VERB) 싶습니다. 우주비행사들은 기*술과*(CCONJ) 용기로 우*주를*(NOUN) 탐험합니다. 우리는 새*로운*(ADJ) 세계를 발견*하고*(VERB) 싶어합니다. 우주비행사들은 지*식을*(NOUN) 찾아 우*주를*(NOUN) 여행합니다. 우리는 더 많은 것*을*(NOUN) 알고 싶어*합니다*(AUX).
